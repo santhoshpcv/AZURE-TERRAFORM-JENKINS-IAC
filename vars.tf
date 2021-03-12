@@ -1,6 +1,6 @@
 variable "resource_group" {
     type = string
-    default = "pani_rg"
+    default = "santhosh_rg"
 }
 
 variable "virtualnetwork_name" {
@@ -8,10 +8,7 @@ variable "virtualnetwork_name" {
     default = "santhoshvnet"
 }
 
-variable "nsgs"{
-
-    type = list
-    default = ["prd_nsg","test_nsg","dev_nsg"]
-
-
+variable "vmname"{
+    type =string
+    default = "demovm"
 }
