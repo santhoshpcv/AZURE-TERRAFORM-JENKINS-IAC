@@ -3,12 +3,12 @@ variable "resource_group" {
     default = "santhosh"
 }
 
-variable "virtualnetwork_name" {
-    type = string
-    default = "santhoshvnet"
-}
+# variable "virtualnetwork_name" {
+#     type = string
+#     default = "santhoshvnet"
+# }
 
-variable "vmname"{
-    type =string
-    default = "demovm"
-}
+# variable "vmname"{
+#     type =string
+#     default = "demovm"
+# }
