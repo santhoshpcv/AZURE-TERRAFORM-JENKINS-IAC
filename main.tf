@@ -5,6 +5,20 @@ provider "azurerm" {
   subscription_id = "ce133ce2-3196-48c0-9605-d846264e7806"
 }
 
+
+terraform {
+  backend "azurerm" {
+    resource_group_name   = "terrastate"
+    storage_account_name  = "sthubtfstate01"
+    container_name        = "azure-prd-tenant-hub-us"
+    key                   = "azure-prd-hub.tfstate"
+    use_msi              = true
+    subscription_id      = "ce133ce2-3196-48c0-9605-d846264e7806"
+  # access_key            = var.ackey
+  }
+}
+
+
 resource "azurerm_resource_group" "rg1" {
   name     = var.resource_group
   location = "West Europe"
