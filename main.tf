@@ -2,7 +2,7 @@ provider "azurerm" {
   # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
   version = "=2.40.0"
   features {}
-  subscription_id = "5474c111-7597-430a-80bf-2e3a19e91895"
+  subscription_id = "ce133ce2-3196-48c0-9605-d846264e7806"
 }
 
 resource "azurerm_resource_group" "rg1" {
@@ -10,34 +10,34 @@ resource "azurerm_resource_group" "rg1" {
   location = "West Europe"
 }
 
-resource "azurerm_storage_account" "san1" {
-  name                     = "santhoshteststorage"
-  resource_group_name      = azurerm_resource_group.rg1.name
-  location                 = azurerm_resource_group.rg1.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+# resource "azurerm_storage_account" "san1" {
+#   name                     = "santhoshteststorage"
+#   resource_group_name      = azurerm_resource_group.rg1.name
+#   location                 = azurerm_resource_group.rg1.location
+#   account_tier             = "Standard"
+#   account_replication_type = "LRS"
 
-  tags = {
-    environment = "staging"
-  }
-}
+#   tags = {
+#     environment = "staging"
+#   }
+# }
 
 
-resource "azurerm_virtual_network" "vnet1" {
-  name                = var.virtualnetwork_name
-  location            = azurerm_resource_group.rg1.location
-  resource_group_name = azurerm_resource_group.rg1.name
-  address_space       = ["10.0.0.0/16"]
+# resource "azurerm_virtual_network" "vnet1" {
+#   name                = var.virtualnetwork_name
+#   location            = azurerm_resource_group.rg1.location
+#   resource_group_name = azurerm_resource_group.rg1.name
+#   address_space       = ["10.0.0.0/16"]
   
-  subnet {
-    name           = "production"
-    address_prefix = "10.0.1.0/24"
-  }
+#   subnet {
+#     name           = "production"
+#     address_prefix = "10.0.1.0/24"
+#   }
 
-  tags = {
-    environment = "Production"
-  }
-}
+#   tags = {
+#     environment = "Production"
+#   }
+# }
 
 
 # resource "azurerm_network_interface" "main" {
