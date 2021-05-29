@@ -8,9 +8,9 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    resource_group_name   = "terrastate"
-    storage_account_name  = "sthubtfstate01"
-    container_name        = "azure-prd-tenant-hub-us"
+    resource_group_name   = "test"
+    storage_account_name  = "jenkinsterrastorage"
+    container_name        = "statefile"
     key                   = "azure-prd-hub.tfstate"
     use_msi              = true
     subscription_id      = "ce133ce2-3196-48c0-9605-d846264e7806"
