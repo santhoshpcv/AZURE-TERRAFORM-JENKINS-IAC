@@ -32,7 +32,7 @@ resource "azurerm_storage_account" "san1" {
   account_replication_type = "LRS"
 
   tags = {
-    environment = "staging"
+    environment = "stage"
    }
  }
 
