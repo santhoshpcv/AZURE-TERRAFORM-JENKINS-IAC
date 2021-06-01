@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "rg1" {
 }
 
 resource "azurerm_storage_account" "san1" {
-  name                     = "santhoshteststorage20"
+  name                     = "santhoshteststorage220"
   resource_group_name      = azurerm_resource_group.rg1.name
   location                 = azurerm_resource_group.rg1.location
   account_tier             = "Standard"
