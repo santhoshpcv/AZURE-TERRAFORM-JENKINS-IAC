@@ -24,6 +24,10 @@ resource "azurerm_resource_group" "rg1" {
   location = "West Europe"
 }
 
+resource "azurerm_resource_group" "rg2" {
+  name     = "pptest"
+  location = "West Europe"
+}
 resource "azurerm_storage_account" "san1" {
   name                     = "santhoshteststorage20"
   resource_group_name      = azurerm_resource_group.rg1.name
