@@ -1,6 +1,6 @@
 variable "resource_group" {
     type = string
-    default = "santhosh"
+    default = "santhoshcv"
 }
 
 # variable "virtualnetwork_name" {
