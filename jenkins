@@ -1,0 +1,45 @@
+pipeline{
+    agent any
+    environment{
+    ARM_CLIENT_ID=credentials('AZURE_CLIENT_ID')
+    ARM_CLIENT_SECRET=credentials('AZURE_CLIENT_SECRET')
+    ARM_TENANT_ID=credentials('AZURE_TENANT_ID')
+    }
+    stages{
+        stage('git'){
+            steps{
+                git 'https://github.com/santhoshpcv/IAC.git'
+            }
+                
+        }
+        stage('Terraform Init'){
+
+            steps{
+
+                
+                sh '''terraform init -reconfigure'''
+            }
+                
+        }
+        stage('Terraform plan'){
+             
+            steps{
+                sh 'echo export $ARM_CLIENT_ID'
+                sh 'echo export $ARM_CLIENT_SECRET'
+                sh 'echo export $ARM_TENANT_ID'
+
+                sh '''terraform plan'''
+            }
+                
+        }
+         stage('Terraform apply'){
+            input{
+                  message "Do you want to proceed for production deployment?"} 
+            steps{
+
+                sh '''terraform apply -auto-approve'''
+            }
+                
+        }       
+    }
+}
