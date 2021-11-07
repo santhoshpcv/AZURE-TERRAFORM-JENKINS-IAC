@@ -2,7 +2,7 @@ provider "azurerm" {
   # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
   version = "=2.40.0"
   features {}
-  subscription_id = "bab3fc2d-e046-418f-8208-a13eeab20707"
+  subscription_id = ""
 }
 
 
@@ -13,7 +13,7 @@ terraform {
     container_name        = "statefile"
     key                   = "azure-prd-hub.tfstate"
     use_msi              = true
-    subscription_id      = "bab3fc2d-e046-418f-8208-a13eeab20707"
+    subscription_id      = ""
   # access_key            = var.ackey
   }
 }
