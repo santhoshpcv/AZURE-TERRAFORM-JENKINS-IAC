@@ -19,9 +19,9 @@ terraform {
 }
 
 
-resource "azurerm_resource_group" "rg1" {
-  name     = var.resource_group
-  location = "Germany West Central"
+data "azurerm_resource_group" "rg1" {
+  name     = "AKSPLAY"
+  
 }
 
 
