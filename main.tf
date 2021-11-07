@@ -8,12 +8,12 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    resource_group_name   = "test"
-    storage_account_name  = "jenkinsterrastorage"
+    resource_group_name   = "AKSPLAY"
+    storage_account_name  = "paniteststac"
     container_name        = "statefile"
     key                   = "azure-prd-hub.tfstate"
     use_msi              = true
-    subscription_id      = "ce133ce2-3196-48c0-9605-d846264e7806"
+    subscription_id      = "bab3fc2d-e046-418f-8208-a13eeab20707"
   # access_key            = var.ackey
   }
 }
@@ -21,15 +21,12 @@ terraform {
 
 resource "azurerm_resource_group" "rg1" {
   name     = var.resource_group
-  location = "West Europe"
+  location = "Germany West Central"
 }
 
-resource "azurerm_resource_group" "rg2" {
-  name     = "pptest"
-  location = "West Europe"
-}
+
 resource "azurerm_storage_account" "san1" {
-  name                     = "santhoshteststorage20"
+  name                     = "santhoshteststorage2021nov"
   resource_group_name      = azurerm_resource_group.rg1.name
   location                 = azurerm_resource_group.rg1.location
   account_tier             = "Standard"
