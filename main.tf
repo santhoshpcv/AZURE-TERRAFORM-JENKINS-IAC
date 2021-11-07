@@ -2,7 +2,7 @@ provider "azurerm" {
   # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
   version = "=2.40.0"
   features {}
-  subscription_id = "ce133ce2-3196-48c0-9605-d846264e7806"
+  subscription_id = "bab3fc2d-e046-418f-8208-a13eeab20707"
 }
 
 
